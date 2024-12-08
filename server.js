@@ -20,8 +20,8 @@ connectDB()
 
 //razorpay
 export const instance = new Razorpay({
-    key_id: process.env.RAZORPAY_ID_KEY,
-    key_secret: process.env.RAZORPAY_SECRET_KEY,
+    key_id : process.env.RAZORPAY_ID_KEY,
+    key_secret : process.env.RAZORPAY_SECRET_KEY,
   
     
   
@@ -59,10 +59,7 @@ app.get('/',(req,res)=>{
 
     
 })
-app.get('/test-session', (req, res) => {
-    console.log('Session Data in /test-session route:', req.session.user);
-    res.send(req.session.user || 'No user found in session');
-});
+
 
 
 app.get('/api/getkey',(req,res)=>{

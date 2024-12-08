@@ -1,6 +1,7 @@
 import { instance } from "../server.js"
 import crypto from 'crypto'
 
+
 export const checkout = async (req, res) => {
   try {
     const { amount } = req.body;
@@ -22,9 +23,12 @@ export const checkout = async (req, res) => {
     };
 
   
+
+
     
     // Await the Razorpay API request
     const order = await instance.orders.create(options); // This line is the critical part to await
+
 
 
 
@@ -68,7 +72,7 @@ export const paymentverification = async (req, res) => {
   // Log received and generated signatures for debugging
 const isAuthentic=expectedSignature === razorpay_signature
 if(isAuthentic){
-  res.redirect(`http://localhost:3000/pyment?reference=${razorpay_payment_id}`)
+  res.redirect(`https://online-furniture-zeta.vercel.app/pyment?reference=${razorpay_payment_id}`)
 }else{
     res.status(400).json({
         success: false,
